@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Анализатор текста</title>
+</head>
+<body>
+    <h1>Введите текст для анализа</h1>
+    <form action="#" th:action="@{/analyze}" method="post" th:object="${text}">
+        <textarea 
+            th:field="*{text}"
+            rows="10"
+            cols="50"
+            placeholder="Введите текст..."
+        ></textarea>
+        <br>
+        <button type="submit">Анализировать</button>
+    </form>
+</body>
+</html>
+
