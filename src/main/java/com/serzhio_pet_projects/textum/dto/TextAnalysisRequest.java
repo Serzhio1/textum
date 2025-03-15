@@ -1,4 +1,4 @@
-package com.serzhio_pet_projects.dto;
+package com.serzhio_pet_projects.textum.dto;
 
 import lombok.Data;
 

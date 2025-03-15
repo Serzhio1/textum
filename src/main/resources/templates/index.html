@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Введите текст для анализа</h1>
-    <form action="#" th:action="@{/analyze}" method="post" th:object="${text}">
+    <form action="#" th:action="@{/analyze}" method="post" th:object="${request}">
         <textarea 
             th:field="*{text}"
             rows="10"

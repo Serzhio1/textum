@@ -1,4 +1,4 @@
-package com.serzhio_pet_projects.model;
+package com.serzhio_pet_projects.textum.model;
 
 import java.time.LocalDateTime;
 
@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 
@@ -14,10 +15,11 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "TEXT_ANALYSIS_RESULT")
 public class TextAnalysisResult {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
     @Column(columnDefinition="TEXT")

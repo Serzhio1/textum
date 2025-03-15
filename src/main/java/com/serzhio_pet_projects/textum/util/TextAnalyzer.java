@@ -1,4 +1,4 @@
-package com.serzhio_pet_projects.util;
+package com.serzhio_pet_projects.textum.util;
 
 import java.util.HashMap;
 import java.util.Map;

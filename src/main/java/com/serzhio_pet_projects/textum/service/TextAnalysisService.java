@@ -1,22 +1,29 @@
-package com.serzhio_pet_projects.service;
+package com.serzhio_pet_projects.textum.service;
+
+import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getAverageSentenceLength;
+import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getAverageWordLength;
+import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getListSentences;
+import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getListWords;
+import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getMostFrequencyWord;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.serzhio_pet_projects.model.TextAnalysisResult;
-import com.serzhio_pet_projects.repository.TextAnalysisRepository;
-import static com.serzhio_pet_projects.util.TextAnalyzer.getAverageSentenceLength;
-import static com.serzhio_pet_projects.util.TextAnalyzer.getAverageWordLength;
-import static com.serzhio_pet_projects.util.TextAnalyzer.getListSentences;
-import static com.serzhio_pet_projects.util.TextAnalyzer.getListWords;
-import static com.serzhio_pet_projects.util.TextAnalyzer.getMostFrequencyWord;
+import com.serzhio_pet_projects.textum.model.TextAnalysisResult;
+import com.serzhio_pet_projects.textum.repository.TextAnalysisRepository;
 
 
 @ Service
 public class TextAnalysisService {
 
-    private static TextAnalysisRepository repository;
+    private TextAnalysisRepository repository;
+
+    @Autowired
+    public TextAnalysisService(TextAnalysisRepository repository) {
+        this.repository = repository;
+    }
 
     public TextAnalysisResult analyzeText(String text) {
 
