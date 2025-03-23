@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="results">
+    <h2>Последние 5 запросов:</h2>
+    <ul>
+        <li th:each="result : ${last5Results}">
+            Текст: <span th:text="${result.text}"></span><br>
+            Слов: <span th:text="${result.wordCount}"></span><br>
+            Символов: <span th:text="${result.characterCount}"></span><br>
+            Дата: <span th:text="${result.createdAt}"></span>
+        </li>
+    </ul>
+</div>
+<a href="/"><button>Новый анализ</button></a>
+</html>
