@@ -7,6 +7,7 @@ import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getListWords;
 import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getMostFrequencyWord;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,5 +43,9 @@ public class TextAnalysisService {
         resultEntity.setCreatedAt(LocalDateTime.now());
 
         return repository.save(resultEntity);
+    }
+
+    public List<TextAnalysisResult> getLast5Requests() {
+        return repository.get5LastRequestsFromDb();
     }
 }

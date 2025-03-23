@@ -1,5 +1,7 @@
 package com.serzhio_pet_projects.textum.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,13 @@ public class TextAnalysisController {
     public String showForm(Model model) {
         model.addAttribute("request", new TextAnalysisRequest());
         return "index";
+    }
+
+    @GetMapping("/last5Requests")
+    public String getLast5Requests(Model model) {
+        List<TextAnalysisResult> last5Results = service.getLast5Requests();
+        model.addAttribute("last5Results", last5Results);
+        return "lastResults";
     }
 
     @PostMapping("/analyze")

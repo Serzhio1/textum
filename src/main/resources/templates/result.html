@@ -12,6 +12,6 @@
     <p><strong>Количество предложений:</strong> <span th:text="${result.sentenceCount}"></span></p>
     <p><strong>Средняя длина слова:</strong> <span th:text="${#numbers.formatDecimal(result.avgWordLength, 1, 2)}"></span></p>
     <p><strong>Самое частое слово:</strong> <span th:text="${result.mostFrequentWord}"></span></p>
-    <a href="/">Новый анализ</a>
+    <a href="/"><button>Новый анализ</button></a>
 </body>
 </html>
