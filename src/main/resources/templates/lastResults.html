@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="results">
-    <h2>Последние 5 запросов:</h2>
-    <ul>
-        <li th:each="result : ${last5Results}">
-            Текст: <span th:text="${result.text}"></span><br>
-            Слов: <span th:text="${result.wordCount}"></span><br>
-            Символов: <span th:text="${result.characterCount}"></span><br>
-            Дата: <span th:text="${result.createdAt}"></span>
-        </li>
-    </ul>
-</div>
-<a href="/"><button>Новый анализ</button></a>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Последние запросы</title>
+    <link rel="stylesheet" href="css/lastResults.css">
+</head>
+
+<body>
+    <div th:fragment="results">
+        <h2 class="results-title">Последние 5 запросов</h2>
+        <ul class="results-list">
+            <li th:each="result : ${last5Results}">
+                Текст: <span th:text="${result.text}"></span><br>
+                Слов: <span th:text="${result.wordCount}"></span><br>
+                Символов: <span th:text="${result.characterCount}"></span><br>
+                Предложений: <span th:text="${result.sentenceCount}"></span><br>
+                Дата: <span th:text="${result.createdAt}"></span>
+            </li>
+        </ul>
+    </div>
+    <a href="/" style="text-decoration: none">
+        <button class="analysis-button">Новый анализ</button>
+    </a>
+</body>
 </html>

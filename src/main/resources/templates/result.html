@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymyleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Результаты анализа</title>
+    <link rel="stylesheet" href="css/result.css">
 </head>
+
 <body>
-    <h1>Результаты анализа</h1>
-    <p><strong>Текст:</strong> <span th:text="${result.text}"></span></p>
-    <p><strong>Количество слов:</strong> <span th:text="${result.wordCount}"></span></p>
-    <p><strong>Количество символов:</strong> <span th:text="${result.characterCount}"></span></p>
-    <p><strong>Количество предложений:</strong> <span th:text="${result.sentenceCount}"></span></p>
-    <p><strong>Средняя длина слова:</strong> <span th:text="${#numbers.formatDecimal(result.avgWordLength, 1, 2)}"></span></p>
-    <p><strong>Самое частое слово:</strong> <span th:text="${result.mostFrequentWord}"></span></p>
-    <a href="/"><button>Новый анализ</button></a>
+    <h1 class="title">Результаты анализа</h1>
+    <div class="results-container">
+        <div class="text-block">
+            <span th:text="${result.text}"></span>
+        </div>
+        
+        <div class="metric">
+            <span class="metric-label">Количество слов</span>
+            <span class="metric-value" th:text="${result.wordCount}"></span>
+        </div>
+        
+        <div class="metric">
+            <span class="metric-label">Количество символов</span>
+            <span class="metric-value" th:text="${result.characterCount}"></span>
+        </div>
+        
+        <div class="metric">
+            <span class="metric-label">Количество предложений</span>
+            <span class="metric-value" th:text="${result.sentenceCount}"></span>
+        </div>
+        
+        <div class="metric">
+            <span class="metric-label">Средняя длина слова</span>
+            <span class="metric-value" th:text="${#numbers.formatDecimal(result.avgWordLength, 1, 2)}"></span>
+        </div>
+        
+        <div class="metric">
+            <span class="metric-label">Самое частое слово</span>
+            <span class="metric-value" th:text="${result.mostFrequentWord}"></span>
+        </div>
+    </div>
+    <a href="/" style="text-decoration: none">
+        <button>Новый анализ</button>
+    </a>
 </body>
 </html>

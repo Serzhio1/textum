@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>Анализатор текста</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-    <h1>Введите текст для анализа</h1>
-    <form action="#" th:action="@{/analyze}" method="post" th:object="${request}">
-        <textarea 
-            th:field="*{text}"
-            rows="10"
-            cols="50"
-            placeholder="Введите текст..."
-        ></textarea>
-        <br>
-        <button type="submit">Анализировать</button>
-    </form>
-    <a href="/last5Requests"><button>Показать последние 5 запросов</button></a>
+    <div class="header">
+        <h1 class="title">Textum</h1>
+        <p class="description">Сервис для анализа текста</p>
+    </div>
+    <div class="content">
+        <div class="form-container">
+            
+            <form th:action="@{/analyze}" method="post" th:object="${request}">
+                <div class="textarea-container">
+                    <textarea 
+                        th:field="*{text}"
+                        placeholder="Введите текст..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="button-primary">Анализировать</button>
+                <button type="button" onclick="window.location.href='/last5Requests'" class="button-secondary">Посмотреть последние запросы</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="https://t.me/@SergeyMakh3ov111">Я в телеграме</a>
+        <a href="https://github.com/Serzhio1/textum">Textum в GitHub</a>
+    </div>
+
 </body>
 </html>
