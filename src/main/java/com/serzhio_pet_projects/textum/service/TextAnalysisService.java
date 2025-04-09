@@ -1,11 +1,5 @@
 package com.serzhio_pet_projects.textum.service;
 
-import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getAverageSentenceLength;
-import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getAverageWordLength;
-import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getListSentences;
-import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getListWords;
-import static com.serzhio_pet_projects.textum.util.TextAnalyzer.getMostFrequencyWord;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -14,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.serzhio_pet_projects.textum.model.TextAnalysisResult;
 import com.serzhio_pet_projects.textum.repository.TextAnalysisRepository;
+
+import static com.serzhio_pet_projects.textum.util.TextAnalyzer.*;
 
 
 @ Service
@@ -37,8 +33,8 @@ public class TextAnalysisService {
         resultEntity.setWordCount(words.length);
         resultEntity.setCharacterCount(text.length());
         resultEntity.setSentenceCount(sentences.length);
-        resultEntity.setAvgWordLength(getAverageWordLength(words));
-        resultEntity.setAvgSentenceLength(getAverageSentenceLength(sentences));
+        resultEntity.setAvgWordLength(calculateAverageLenght(words));
+        resultEntity.setAvgSentenceLength(calculateAverageLenght(sentences));
         resultEntity.setMostFrequentWord(getMostFrequencyWord(words));
         resultEntity.setCreatedAt(LocalDateTime.now());
 

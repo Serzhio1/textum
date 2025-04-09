@@ -7,34 +7,32 @@ import java.util.Map;
 public class TextAnalyzer {
 
     public static String[] getListWords(String text) {
-        return text.split("\\s+");
-    }
-
-    public static String[] getListSentences(String text) {
-        return text.split("[.!?]\\s*");
-    }
-
-    public static double getAverageWordLength(String[] words) {
-        if (words.length == 0) {
-            return 0;
-        } else {
-            int totalLengthAllWords = 0;
-            for (String word: words) {
-                totalLengthAllWords += word.length();
-            }
-            return (double) totalLengthAllWords /words.length;
+        if (text == null || text.isBlank()) {
+            return new String[0];
+        }
+        else {
+            String textWithoutSpacesAtEnds = text.trim();
+            return textWithoutSpacesAtEnds.split("\\s+");
         }
     }
 
-    public static double getAverageSentenceLength(String[] sentences) {
-        if (sentences.length == 0) {
+    public static String[] getListSentences(String text) {
+        if (text == null) {
+            return new String[0];
+        } else {
+            return text.split("(?<=[.!?])\\s+");
+        }
+    }
+
+    public static double calculateAverageLenght(String[] elements) {
+        if (elements == null || elements.length == 0) {
             return 0;
         } else {
-            int totalLengthAllWords = 0;
-            for (String sentence: sentences) {
-                totalLengthAllWords += sentence.length();
+            int totalLength = 0;
+            for (String sentence: elements) {
+                totalLength += sentence.length();
             }
-            return (double) totalLengthAllWords /sentences.length;
+            return (double) totalLength /elements.length;
         }
     }
 
