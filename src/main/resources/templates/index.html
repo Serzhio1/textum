@@ -14,7 +14,6 @@
     </div>
     <div class="content">
         <div class="form-container">
-            
             <form th:action="@{/analyze}" method="post" th:object="${request}">
                 <div class="textarea-container">
                     <textarea 
@@ -22,16 +21,14 @@
                         placeholder="Введите текст..."
                     ></textarea>
                 </div>
-
                 <button type="submit" class="button-primary">Анализировать</button>
                 <button type="button" onclick="window.location.href='/last5Requests'" class="button-secondary">Посмотреть последние запросы</button>
             </form>
         </div>
     </div>
     <div class="footer">
-        <a href="https://t.me/@SergeyMakh3ov111">Я в телеграме</a>
+        <a href="https://t.me/@SergeyMakh3ov111">Я в Telegram</a>
         <a href="https://github.com/Serzhio1/textum">Textum в GitHub</a>
     </div>
-
 </body>
 </html>

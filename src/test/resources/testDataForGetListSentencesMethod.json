@@ -1,0 +1,70 @@
+[
+  {
+    "inputStr": null,
+    "expectedList": []
+  },
+  {
+    "inputStr": "Hello! How are you? I'm fine.",
+    "expectedList": ["Hello!", "How are you?", "I'm fine."]
+  },
+  {
+    "inputStr": "",
+    "expectedList": [""]
+  },
+  {
+    "inputStr": "Wow! Hi",
+    "expectedList": ["Wow!", "Hi"]
+  },
+  {
+    "inputStr": "Wow!",
+    "expectedList": ["Wow!"]
+  },
+  {
+    "inputStr": "Wow, how are you?",
+    "expectedList": ["Wow, how are you?"]
+  },
+  {
+    "inputStr": "Wow, how are you?",
+    "expectedList": ["Wow, how are you?"]
+  },
+  {
+    "inputStr": "Hello",
+    "expectedList": ["Hello"]
+  },
+  {
+    "inputStr": ".",
+    "expectedList": ["."]
+  },
+  {
+    "inputStr": "?",
+    "expectedList": ["?"]
+  },
+  {
+    "inputStr": "!",
+    "expectedList": ["!"]
+  },
+  {
+    "inputStr": ",",
+    "expectedList": [","]
+  },
+  {
+    "inputStr": "!",
+    "expectedList": ["!"]
+  },
+  {
+    "inputStr": "How are you???",
+    "expectedList": ["How are you???"]
+  },
+  {
+    "inputStr": "Hello! How are you???",
+    "expectedList": ["Hello!", "How are you???"]
+  },
+  {
+    "inputStr": "Hello!?",
+    "expectedList": ["Hello!?"]
+  },
+  {
+    "inputStr": "Hello!? Hi! Hi. How are you? What do you think?!.",
+    "expectedList": ["Hello!?", "Hi!", "Hi.", "How are you?", "What do you think?!."]
+  }
+]
